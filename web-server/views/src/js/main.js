@@ -1,3 +1,5 @@
+/*
+not used
 document.addEventListener('DOMContentLoaded', function() {
   // Keep your constants & variables as in CoffeeScript
   const MIN_PAGE_H = 600;
@@ -394,3 +396,5 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+
+*/
