@@ -1,0 +1,3 @@
+[submodule "web-server/libcommon"]
+	path = web-server/libcommon
+	url = git@github.com:ThinkXInc/libcommon.git

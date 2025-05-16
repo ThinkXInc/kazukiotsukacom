@@ -1,5 +1,5 @@
 {
-  "name": "transformism",
+  "name": "kazukiotsukacom",
   "version": "1.0.0",
   "scripts": {
     "compile:views:js": "npx babel src/js --out-dir js --watch",

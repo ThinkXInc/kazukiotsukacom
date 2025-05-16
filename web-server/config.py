@@ -93,7 +93,7 @@ class Config:
     MAIL_REPLY_TO = 'inquiry@thinkxinc.com'  # necessary
 
     if env == "production":
-        HOST_URL = "https://transformism.art"
+        HOST_URL = "https://kazukiotsuka.com"
         LOG_LEVEL = logging.INFO
 
     elif env == "develop":
