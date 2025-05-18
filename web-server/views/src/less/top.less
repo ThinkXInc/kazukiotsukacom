@@ -95,6 +95,12 @@ body {
                 }
             }
         }
+        div.copyright {
+            font-size: 14px;
+            font-family: @main-font-family;
+            bottom: 22px;
+            left: 22px;
+        }
     }
 }
 
@@ -105,7 +111,7 @@ div.view {
     left: 0;
     width: 100vw;
     height: 100vh;
-    padding: 0px 200px 0 200px;
+    padding: 0px 200px 0px 200px;
 }
 
 #bio {
@@ -122,13 +128,14 @@ div.view {
             justify-content: end;
             font-family: @main-font-family;
             a {
-                color: #1a62ff;//#79b1ff;
+                color: #757677;//#79b1ff;
             }
             span.hyphen {
                 margin-left: 4px;
                 margin-right: 4px;
             }
             span.selected {
+                color: #000;
             }
         }
         img#photo {
@@ -169,11 +176,16 @@ div.view {
                 div.playmenu {
                 }
             }
+            div.copyright {
+                left: auto;
+                right: 22px;
+            }
         }
     }
 
     div.view {
         padding: 0 40px;
+
     }
     #bio {
         div.scroll-container {
