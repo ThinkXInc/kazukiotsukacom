@@ -1,5 +1,6 @@
 from flask import request, g
 from functools import wraps, partial
+from urllib.parse import urlparse, parse_qs
 
 from libcommon.language import Language
 from libcommon.locale import Locale
@@ -40,8 +41,13 @@ def language_wrapper(func):
             lang = url_lang
             logger.debug(f"Language set from URL: {lang}")
         else:
-            lang = kwargs.get('lang', DEFAULT_LANG)
-            logger.debug(f"Language not found in url. set from default or kwargs: {lang}")
+            query_lang = request.args.get('lang', None)
+            if query_lang:
+                lang = query_lang
+                logger.debug(f"Language set from Query String: {lang}")
+            else:
+                lang = kwargs.get('lang', DEFAULT_LANG)
+                logger.debug(f"Language not found in url. set from default or kwargs: {lang}")
 
         # Step 4: Set the chosen language
         lang_name = LANG_NAME_MAP.get(lang, LANG_NAME_MAP.get(DEFAULT_LANG))
