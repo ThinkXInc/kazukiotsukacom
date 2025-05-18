@@ -32,21 +32,26 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-  
+
     gtag('config', 'G-QEGVD17NHW');
   </script>
 
+  {# twitter #}
 	<meta name="twitter:card" content="summary">
 	<meta name="twitter:site" content="@K00TSUKA">
 	<meta name="twitter:title" content="Kazuki Otsuka">
 	<meta name="twitter:description" content="{{ metadata['description'] }}">
-	<meta name="twitter:url" content="https://transformism.art">
+	<meta name="twitter:url" content="{{ metadata['url'] }}">
+  <meta name="twitter:image" content="{{ metadata['image'] }}">
 
+  {# facebook #}
   <meta property="og:type" content="website"> 
-  <meta property="og:title" content="Transformism - A New Mainstream of Modern Art">
+  <meta property="og:title" content="{{ metadata['title'] }}">
   <meta property="og:description" content="{{ metadata['description'] }}">
-  <meta property="og:url" content="https://transformism.art">
-  <meta property="og:image" content="">
+  <meta property="og:url" content="{{ metadata['url'] }}">
+  <meta property="og:image:type"  content="image/png"> 
+  <meta property="og:image" content="{{ metadata['image'] }}">
+
 
   {% block head %}
   {% endblock %}
