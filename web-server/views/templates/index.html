@@ -26,7 +26,7 @@
 	   <canvas id="canvas" style="background-color: #FFF;" resize></canvas>
     </div>
    	<div class="playmenus" id="ms" style="display:none;opacity:0;position:fixed;min-width:200px;z-index:999;">
-   		<div class="playmenu" onclick="clickm1();showHome();" id="m1" style="color:#000; position:absolute; top:0px; left:20px; cursor:pointer;"></div>
+   		<div class="playmenu" onclick="showHome();clickm1();" id="m1" style="color:#000; position:absolute; top:0px; left:20px; cursor:pointer;"></div>
    		<div class="playmenu" onclick="clickm4();showBio();" id="m2" style="color:#000; position:absolute; top:40px; left:20px; cursor:pointer;"></div>
    		<div class="playmenu" onclick="clickm4();showBlog();" id="m3" style="color:#000; position:absolute; top:80px; left:20px; cursor:pointer;"></div>
    		<div class="playmenu" onclick="clickm3();showContact();" id="m4" style="color:#000; position:absolute; top:120px; left:20px; cursor:pointer;"></div>
@@ -50,17 +50,20 @@
     <div id="bio" class="view" style="display:none;">
       <div class="scroll-container">
 
-        <!-- Language Toggle in the top-right corner -->
-        <div class="lang-select">
-          {% if lang == 'en' %}
-            <span class="selected">EN</span>
-            <span class="hyphen">/</span> 
-            <a href="?lang=ja">JA</a>
-          {% else %}
-            <a href="?lang=en">EN</a>
-            <span class="hyphen">/</span> 
-            <span class="selected">JA</span>
-          {% endif %}
+        <div class="bio-head">
+          <a class="tohome">
+          <!-- Language Toggle in the top-right corner -->
+          <div class="lang-select">
+            {% if lang == 'en' %}
+              <span class="selected">EN</span>
+              <span class="hyphen">/</span> 
+              <a href="?lang=ja">JA</a>
+            {% else %}
+              <a href="?lang=en">EN</a>
+              <span class="hyphen">/</span> 
+              <span class="selected">JA</span>
+            {% endif %}
+          </div>
         </div>
 
         <img id="photo" src="/img/bio/self.jpg">
