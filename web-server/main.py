@@ -32,8 +32,8 @@ from libcommon.web.http_errors import InvalidContentTypeAPIErrorFormat, \
     BadRequestAPIErrorFormat, UnauthorizedAPIErrorFormat, RateLimitExceededAPIErrorFormat
 from libcommon.web.http_successes import OKAPISuccessFormat, CreatedAPISuccessFormat, \
     AcceptedAPISuccessFormat
-#from flask_helper import language_wrapper, handle_error
-from libcommon.web.flask_helpers import language_wrapper, handle_error
+from flask_helper import language_wrapper, handle_error
+#from libcommon.web.flask_helpers import language_wrapper, handle_error  # so far User dependency problem
 
 COMMON_LOCALES_ROOT = join(abspath(__file__), 'libcommon/locales')
 LOCALES_ROOT = Config.LOCALES_ROOT
