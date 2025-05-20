@@ -6,6 +6,7 @@ from urllib.parse import quote
 import atexit
 from jinja2 import TemplateNotFound
 from flask import abort, Flask, render_template, request, g, jsonify, url_for, redirect
+from flask import redirect, url_for
 
 # Config
 from config import Config, check_config
@@ -85,6 +86,11 @@ def top_handler(lang, lang_name):
         locale_dict=locale.dict(),
         metadata=locale.dict()["metadata_home"][lang])
 
+@app.route('/<lang>')
+@app.route('/<lang>/')
+@language_wrapper        # <-- re-use the same decorator
+def top_handler_lang(lang, lang_name):
+    return top_handler(lang=lang, lang_name=lang_name)
 
 @app.errorhandler(400)
 @language_wrapper
