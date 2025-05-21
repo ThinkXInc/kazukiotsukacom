@@ -68,7 +68,15 @@
           </div>
         </div>
 
-        <img id="photo" src="/img/bio/self.jpg">
+        {% if lang == 'ja' %}
+          <img id="photo"
+               src="/img/bio/self.jpg"
+               alt="プロフィール写真 - 大塚一輝" />
+        {% else %}
+          <img id="photo"
+               src="/img/bio/self.jpg"
+               alt="Portrait of Kazuki Otsuka" />
+        {% endif %}
         <!-- Include the correct Bio partial based on lang -->
         <div class="profile">
           {% if lang == 'ja' %}
