@@ -78,7 +78,8 @@ DEFAULT_LANG = Config.DEFAULT_LANG
 @app.route('/')
 @language_wrapper
 def top_handler(lang, lang_name):
-    lang = request.args.get('lang', 'en')
+    if not lang:
+        lang = request.args.get('lang', 'en')
     return render_template(
         'index.html',
         page_id='home',
