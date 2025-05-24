@@ -17,11 +17,11 @@ var restitution_object = 0.6; //弾性
 
 //sentences
 var message1 = "Since the scientific revolution of the 17th century, society has been facing the limits of complexity.";
-var message2 = "As differentiation has progressed, people have become mechanized within the confines of systems, and meditation has become indispensable for protecting themselves from stimuli.";
-var message3 = "We need to regain the era of integrated knowledge.";
-var message4 = "This is the transcendence of modernity, which will bring us a new creative society,"
-var message5 = " a new Renaissance era."
-var message6 = ""
+var message2 = "As differentiation has progressed, people have become mechanized within the confines of systems,";
+var message3 = " and meditation has become indispensable for protecting themselves from stimuli.";
+var message4 = "We need to regain the era of integrated knowledge. This is the transcendence of modernity,"
+var message5 = "which will bring us a new creative society,"
+var message6 = " that is, a new Renaissance era."
 //var message1 = "Science is the conflicting concept with ideology\nabout the objectivity.";
 //var message2 = "But when the science takes in ideologies,\nit would be an art.";
 //var message3 = "Though it's difficult to answer the question that what is art,\nnot difficult to say that this is an art for some work of art.";
