@@ -9,17 +9,22 @@
   </url>
 
   <url>
-    <loc>https://kazukiotsuka.com/ja/</loc>
+    <loc>https://kazukiotsuka.com/ja</loc>
     <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://kazukiotsuka.com/?lang=ja</loc>
+    <loc>https://kazukiotsuka.com/en</loc>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://kazukiotsuka.com/?page=bio</loc>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://kazukiotsuka.com/?lang=en</loc>
+    <loc>https://kazukiotsuka.com/ja?page=bio</loc>
     <priority>0.9</priority>
   </url>
 
