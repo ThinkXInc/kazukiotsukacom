@@ -1,9 +1,0 @@
-{
-  "body": {
-    "code": 207,
-    "error_detail": "some failed",
-    "id": 3,
-    "message": "partial"
-  },
-  "status": 207
-}

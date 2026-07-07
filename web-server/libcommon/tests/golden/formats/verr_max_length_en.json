@@ -1,5 +1,0 @@
-{
-  "field_name": "name",
-  "message": "The input must be no more than $0 characters in length.",
-  "value": "toolong"
-}
