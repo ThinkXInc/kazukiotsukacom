@@ -43,3 +43,25 @@
 - 実行(cwd 非依存・autoenv 回避のためワークスペース直下から):
   `.s-track-venv/bin/python -m pytest kazukiotsukacom/web-server/tests/test_app_imports.py \
    kazukiotsukacom/web-server/tests/test_route_sweep.py`
+
+---
+
+## S-3 kazukiotsukacom カットオーバー(2026-07-07・S-1+S-2 同型)
+
+- `git submodule deinit -f web-server/libcommon` → `git rm -f web-server/libcommon` → `.gitmodules`
+  は libcommon が唯一の submodule だったため空になり `git rm -f .gitmodules` で削除。
+- `bash libcommon/scripts/bake.sh v2.0.0 kazukiotsukacom/web-server/` → 実物コピー + VERSION。
+- VERSION tree_sha256 = `3359309a…cf0` = S-0a パラメータと一致(bake 出力 + `bash -c` 独立再算出の
+  両方で MATCH。thinkx と同一 v2.0.0 ソースのためバイト同一)。
+- `.gitignore` の無視は `__pycache__/*.pyc` のみ(bake hash 除外対象と一致)。実ソース129ファイル tracked、pyc 混入なし。
+- 検証: `from main import app` green / ルートゴールデン(4件)不変 / 想定外差分なし
+  ({D .gitmodules, D gitlink, A 129 実ファイル})。
+
+### S-2 相当 デプロイ経路の submodule 依存検査
+- `log.sh`(journalctl)/ `restart.sh`・`web-server/restart.sh`(systemctl restart uwsgi)のみ。
+- `git grep -E 'submodule|recurse-submodules'`(libcommon・tests・findings 除外)= **0件**。
+- CI 設定ファイル・playbooks・deploy.sh は**存在しない**。→ デプロイ経路の変更不要。
+
+### 環境メモ(CLAUDE.md にも反映済み)
+- `cd` はワークスペースの `.autoenv` により対話プロンプトで stdin をブロックし無人進行を止める。
+  検証・hash 再算出は `git -C`、または cd を含む場合は `bash -c '...'`(zsh の autoenv フック回避)で行う。
